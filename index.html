@@ -7,9 +7,25 @@
     <title>Fizz Buzz Refactor</title>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/app.js"></script>
+    <style>
+    body{
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    background-color: #fff;
+    padding: 50px;
+    }
+    .intro-text{
+        padding: 20px;
+    }
+    </style>
 </head>
 
 <body onload="userInput()">
+<div class="intro-text">
+<h1>Fizz-Buzz Refactored</h1>
+<h3 id="title">Start Value:</h3>
 <p>In this assignment, you’ll build a FizzBuzz app from scratch. In the original game of
  Fizz Buzz, you count from 1 to a given number (let’s say 100). For each number if it’s
   not divisible by 3 or 5, you simply say the number. If it’s divisible by 3, instead of the
@@ -17,18 +33,18 @@
    both 3 and 5, you say “fizz buzz”. So, counting from 1 to 15, you’d say: “1, 2, fizz, 4, buzz,
     fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizz buzz”.</p>
 
-<h1 id="title">Start Value:</h1>
+</div>
 
     <script>
     function userInput(){
         var startVal = prompt('Please enter start value', 1);
         if(startVal != null){
             document.getElementById("title").innerHTML="Start Value: " + startVal;
+        insertStartVal(startVal)
         };
-
     };
-    var count = new Array(100);
-    var textInsert = "";
+
+
 
     function mod3(i) {
         return ((i % 3) === 0) ? "Fizz" : false;
@@ -42,7 +58,13 @@
         return (((i % 3) === 0) && ((i % 5) === 0)) ? "Fizz-Buzz" : false;
     }
 
-    for (var i = 1; i < count.length; i++) {
+ function insertStartVal(startVal){
+        var arrLength = startVal;
+        var count = new Array();
+        var textInsert = "";
+
+
+    for (var i = 1; i < arrLength; i++) {
         count[i] = i;
         var answer3 = mod3(count[i]);
         var answer5 = mod5(count[i]);
@@ -62,6 +84,7 @@
     }
 
     $("body").append(textInsert);
+};
     </script>
 </body>
 
