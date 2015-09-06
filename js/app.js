@@ -1,5 +1,5 @@
  function userInput(){
-        var startVal = prompt('Please enter start value', 1);
+        var startVal = prompt('Please enter start value', "1");
         var validVal = validateMe(startVal);
         if(startVal != null){
             document.getElementById("title").innerHTML="Start Value: " + startVal;
@@ -7,14 +7,25 @@
         };
     };
 
+    function errorPrompt(){
+         var error = alert("Invalid Input, please try again");
+            userInput();
+            // Do I need to do a return?
+            // is this bad code?
+            // Do I need to create a error variable to pop
+            // alert box?
+            // seems like it should be able to return and //call next function.
+    }
+
     function validateMe (startVal){
         var validString=""
         if (typeof startVal === "string"){
+             //console.log("function before conversion: " + typeof(startVal) );
+             // Convert "22" to int 22;
              validString=+ startVal;
-            console.log(validStringString);
         }
         if (isNaN(validString)){
-          console.log("#FAIL NaN");
+           errorPrompt();
         };
 
         return validString;
