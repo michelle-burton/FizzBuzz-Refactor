@@ -1,3 +1,4 @@
+//FizzBuzz
 // Terminal application with Javascript Node.js
 const readline = require('readline');
 
@@ -20,7 +21,7 @@ function fizzBuzz(limit) {
     }
 }
 
-// Example usage:
+// Prompt user for input
 rl.question('Enter a number: ', (answer) => {
     // convert strings to int, and trim
     const n = parseInt(answer.trim(), 10);
