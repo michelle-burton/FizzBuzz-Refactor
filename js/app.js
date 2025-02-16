@@ -22,11 +22,8 @@ function fizzBuzz(limit) {
 
 // Example usage:
 rl.question('Enter a number: ', (answer) => {
+    // convert strings to int, and trim
     const n = parseInt(answer.trim(), 10);
     fizzBuzz(n);
     rl.close();
 });
-
-// Example usage:
-const n = parseInt(readLine().trim(), 10);
-fizzBuzz(n);
